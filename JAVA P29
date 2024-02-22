@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        String decimalStr = scanner.nextLine();
+
+        try {
+            int decimal = Integer.parseInt(decimalStr);
+            String binary = Integer.toBinaryString(decimal);
+            String reversedBinary = new StringBuilder(binary).reverse().toString();
+            int reversedDecimal = Integer.parseInt(reversedBinary, 2);
+
+            System.out.println("Binary: " + binary);
+            System.out.println("Reversed Binary: " + reversedBinary);
+            System.out.println("Reversed Decimal: " + reversedDecimal);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input! Please enter a valid decimal number.");
+        }
+    }
+}
