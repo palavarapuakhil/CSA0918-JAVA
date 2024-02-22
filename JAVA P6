@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ConsonantVowelSeparator {
+    public static void main(String[] args) {
+      
+        System.out.print("Enter a word: ");
+        String inputWord = scanner.nextLine().toLowerCase();
+
+        System.out.print("Consonants: ");
+        for (char character : inputWord.toCharArray()) {
+            if ("bcdfghjklmnpqrstvwxyz".indexOf(character) != -1) {
+                System.out.print(character + " ");
+            }
+        }
+
+        System.out.print("\nVowels: ");
+        for (char character : inputWord.toCharArray()) {
+            if ("aeiou".indexOf(character) != -1) {
+                System.out.print(character + " ");
+            }
+        }
+
+        scanner.close();
+    }
+}
