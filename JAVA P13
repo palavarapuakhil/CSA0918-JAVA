@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+public class ArrayStatistics {
+    public static void main(String[] args) {
+        double[] numbers = {16, 18, 27, 16, 23, 21, 19};
+        
+        // Sort the array
+        Arrays.sort(numbers);
+
+        // Calculate mean
+        double sum = 0;
+        for (double num : numbers) {
+            sum += num;
+        }
+        double mean = sum / numbers.length;
+
+        // Calculate median
+        double median;
+        if (numbers.length % 2 == 0) {
+            median = (numbers[numbers.length / 2 - 1] + numbers[numbers.length / 2]) / 2.0;
+        } else {
+            median = numbers[numbers.length / 2];
+        }
+
+        double mode = numbers[0];
+        int count = 1;
+        int maxCount = 1;
+
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] == numbers[i - 1]) {
+                count++;
+            } else {
+                count = 1;
+            }
+
+            if (count > maxCount) {
+                maxCount = count;
+                mode = numbers[i];
+            }
+        }
+
+        System.out.println("Mean = " + mean);
+        System.out.println("Median = " + median);
+        System.out.println("Mode = " + mode);
+    }
+}
