@@ -1,0 +1,8 @@
+# Sample Input
+input_string = "1234"
+
+# Convert string to integer
+output_integer = int(input_string)
+
+# Display the result
+print("Output Integer:", output_integer)
